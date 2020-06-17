@@ -23,7 +23,7 @@ body{
 // Header------------------
 .header{
     @extend .flex;
-    @include flex;
+    // @include flex;
     color: $blanco;
     height: 100px;
     justify-content: space-between;
@@ -35,43 +35,51 @@ body{
 }
 .header__menu{
     margin-right: 30px;
-}
-.header__menu ul {
-    display: none;
-    list-style: none;
-    padding: 0px;
-    position: absolute;
-    width: 100px;
-    text-align: right;
-    margin: 0px 0px 0px -14px;
-}
-.header__menu:hover ul, ul:hover {
-    display: block;
-}
-.header__menu li{
-    margin: 10px 0;
-}
-.header__menu li a {
-    color: $blanco;
-    text-decoration: none;
-}
-.header__menu li a:hover {
-    text-decoration: underline;
+    ul {
+        list-style: none;
+        padding: 0px;
+        position: absolute;
+        width: 100px;
+        text-align: right;
+        margin: 0px 0px 0px -14px;
+    }
+    li{
+        margin: 10px 0;
+    }
+    li a {
+        color: $blanco;
+        text-decoration: none;
+    }
+    li a:hover {
+        text-decoration: underline;
+    }
 }
 .header__menu--profile {
     margin-right: 8px;
     display: flex;
+
+    img {
+        margin-right: 8px;
+        width: 40px;
+        align-items: center;
+    }
+
+    p {
+        margin: 0;
+        color: $blanco;
+    }
 }
-.header__menu--profile img {
-    margin-right: 8px;
-    width: 40px;
-    align-items: center;
+.header__menu--links{
+    display: none;
 }
-.header__menu--profile p {
-    margin: 0;
-    color: $blanco;
+.header__menu:hover .header__menu--links, .header__menu--links:hover {
+    display: block;
+}
+.header__menu:focus-within .header__menu--links, .header__menu--links:focus-within {
+    display: block;
 }
 
+//Buscador
 .main{
     text-align: center;
     height: 150px;
@@ -80,16 +88,7 @@ body{
     color: $blanco;
     font-size: 25px;
 }
-
-.categories__title {
-    color: $blanco;
-    font-size: 16px;
-    position: absolute;
-    padding: 30px;
-    width: 100%;
-}
-
-.input {
+.main__input{
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid $blanco;
     border-radius: 25px;
@@ -105,6 +104,15 @@ body{
     color: $blanco;
 }
 
+.categories__title {
+    color: $blanco;
+    font-size: 16px;
+    position: absolute;
+    padding: 30px;
+    width: 100%;
+}
+
+//Carrousel
 .carousel {
     width: 100%;
     overflow: scroll;
@@ -126,8 +134,9 @@ body{
     position: relative;
     overflow: hidden;
 }
-.carousel-item:last-child {
-    margin-right: 150px;
+.carousel-item__img{
+    height: 300px;
+    object-fit: cover;
 }
 .carousel-item:hover ~ .carousel-item{
     transform: translate3d(100px,0,0);
@@ -139,9 +148,8 @@ body{
     transform: scale(1.5);
     opacity: 1;
 }
-.carousel-item__img{
-    height: 300px;
-    object-fit: cover;
+.carousel-item:last-child {
+    margin-right: 150px;
 }
 .carousel-item__details {
     background: linear-gradient(to bottom , rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1));
@@ -175,6 +183,112 @@ body{
     margin-bottom: 5px;
     white-space: pre-wrap;
 }
+
+
+//Login Sign in
+.in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+}
+.in__container{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.in__container--form{
+    display: flex;
+    flex-direction: column;
+    label{
+        font-size: 14px;
+    }
+}
+.in__container--remember-me{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    a {
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+    }
+}
+.in__container--remember-me a:hover{
+    text-decoration: underline;
+}
+.in__container--social-media > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.in__container--social-media > div > img{
+    width: 30px;
+    margin-right: 10px;
+}
+.in__container--register{
+    font-size: 14px;
+    a{
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+}
+.in__container--register a:hover {
+    text-decoration: underline;
+}
+.inputs{
+    background-color: transparent;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom:  1px solid white;
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    outline: none;
+    color: white;
+    height: 50px;
+}
+.button{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: $blanco;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family:'Muli', sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+}
+.in__login {
+    text-align: center;
+    a {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+.in__login a:hover {
+    text-decoration: underline;
+}
+
+//Footer
 .footer{
     display: flex;
     align-items: center;
