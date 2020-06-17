@@ -383,12 +383,20 @@ body {
     justify-content: center;
   }
   .header__menu--links ul {
-    text-align: center;
     margin: 0;
+    text-align: center;
   }
   .header__menu--links a {
     font-size: 16px;
     font-weight: 400;
+  }
+
+  .header__menu:hover .header__menu--links, .header__menu--links:hover {
+    display: flex;
+  }
+
+  .header__menu:focus-within .header__menu--links, .header__menu--links:focus-within {
+    display: flex;
   }
 
   .main {

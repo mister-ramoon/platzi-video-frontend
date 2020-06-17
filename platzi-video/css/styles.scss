@@ -365,14 +365,20 @@ body{
         display:flex;
         justify-content: center;
         ul {
-            text-align: center;
             margin:0;
+            text-align: center;
         }
         a {
             font-size: 16px;
             font-weight: 400;
         }
     }
+    .header__menu:hover .header__menu--links, .header__menu--links:hover {
+    display: flex;
+}
+.header__menu:focus-within .header__menu--links, .header__menu--links:focus-within {
+    display: flex;
+}
 
     //Main
     .main {
@@ -411,9 +417,6 @@ body{
     }
 
     //Login Sing In
-    .in {
-        
-    }
     .in__container{
         border: none;
         background: transparent;
