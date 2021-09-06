@@ -5,6 +5,9 @@ body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+  max-width: 1900px;
+  overflow-x: hidden;
+  margin: auto;
 }
 html,
 body {
