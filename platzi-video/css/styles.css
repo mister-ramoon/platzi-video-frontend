@@ -462,16 +462,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1b6ca8;
+  background: #d92027;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d92027;
+  background: #1b6ca8;
   border-radius: 1rem;
   transition: 0.5s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   transition: 0.5s;
-  background: #d92027;
+  background: #1b6ca8;
 }
