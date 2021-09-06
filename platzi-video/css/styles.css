@@ -3,6 +3,13 @@ body {
   font-family: "Muli", sans-serif;
   background: linear-gradient(to left, #d92027, #1b6ca8);
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .header {
