@@ -59,11 +59,13 @@ body {
   display: none;
 }
 
-.header__menu:hover .header__menu--links, .header__menu--links:hover {
+.header__menu:hover .header__menu--links,
+.header__menu--links:hover {
   display: block;
 }
 
-.header__menu:focus-within .header__menu--links, .header__menu--links:focus-within {
+.header__menu:focus-within .header__menu--links,
+.header__menu--links:focus-within {
   display: block;
 }
 
@@ -342,19 +344,6 @@ body {
   text-decoration: underline;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
 @media screen and (max-width: 720px) {
   .header {
     display: block;
@@ -391,11 +380,13 @@ body {
     font-weight: 400;
   }
 
-  .header__menu:hover .header__menu--links, .header__menu--links:hover {
+  .header__menu:hover .header__menu--links,
+  .header__menu--links:hover {
     display: flex;
   }
 
-  .header__menu:focus-within .header__menu--links, .header__menu--links:focus-within {
+  .header__menu:focus-within .header__menu--links,
+  .header__menu--links:focus-within {
     display: flex;
   }
 
@@ -465,3 +456,22 @@ body {
 }
 
 /*# sourceMappingURL=styles.css.map */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #1b6ca8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d92027;
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  transition: 0.5s;
+  background: #d92027;
+}
